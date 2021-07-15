@@ -1,11 +1,179 @@
 <!DOCTYPE html>
 <html>
+<style>
+	body {
+		background-color: #191919;
+		color: #e5e5e5;
+	}
+	h1 {
+		font-size: 2.2em;
+		text-align: center;
+
+		line-height: 160%;
+		font-family: Verdana, sans-serif;
+	}
+	h2 {
+		font-size: 1.9em;
+
+		line-height: 150%;
+		font-family: Verdana, sans-serif;
+
+		margin-top: 1%;
+		margin-bottom: 2%;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+
+	h3 {
+		font-size: 1.4em;
+
+		line-height: 140%;
+		font-family: Verdana, sans-serif;
+
+		margin-top: 0%;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+
+	p {
+		font-size: 1.2em;
+
+		line-height: 160%;
+		font-family: Arial, sans-serif;
+
+		margin-top: 0%;
+		margin-bottom: 0%;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+	
+	a:link {
+		color: #3a3ab5;
+	}
+	
+	a:visited {
+		color: #573a95;
+	}
+	
+	a:hover {
+		color: #4545FF;
+	}
+	
+	a:active {
+		color: #ABABFF;
+	}
+	
+	.accordion {
+		font-size: 1.2em;
+		width: 100%;
+		text-align: left;
+		
+		background-color: #191919;
+		color: #e5e5e5;
+
+		line-height: 160%;
+		font-family: Arial, sans-serif;
+		
+		cursor: pointer;
+		
+		border: none;
+		outline: none;
+		transition: 0.2s;
+
+		margin-top: 0%;
+		margin-bottom: 0%;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+	
+	.active, .accordion:hover {
+		color: white;
+	}
+	
+	.panel {
+		display: none;
+		overflow: hidden;
+	}
+	
+	.accordion:after {
+		content: '\02795'; /* Unicode character for "plus" sign (+) */
+
+		/*float: right;*/
+		margin-left: 5px;
+	}
+
+	.active:after {
+		content: "\2796"; /* Unicode character for "minus" sign (-) */
+	}
+</style>
 <body>
-  <h2>Random Tools I made for ttrpgs</h2>
-  <p>A character creator I made for the Mutant Year Zero ttrpg.
-  <br>Currently only saves to cookies. Not extensively tested.
-  <br><a href="https://diztracshon.github.io/Mutant-Year-Zero-Character-Creator/">MYZ Character Creator</a></p>
-  <br>
-  <p>Hosted with github pages</p>
+	<h1>Random Tools I made for ttrpgs</h1>
+	<h3>Contents</h3>
+	<button class="accordion">Mutant Year Zero</button>
+	<div class="panel">
+		<p>
+			<a href="#MYZ" >Mutant Year Zero</a><br>
+			<a href="#MYZCC">Character Creator</a><br>
+			<a href="#MYZSC">Skills Cheatsheet</a><br>
+			<a href="#MYZTC">Talents Cheatsheet</a><br>
+			<a href="#MYZMC">Mutations Cheatsheet</a><br>
+		</p>
+	</div>
+
+	<div id="MYZ"><h2>Mutant Year Zero</h2></a>
+
+	<div id="MYZCC"><h3>Character Creator</h3></a>
+		<p>A character creator I made for the Mutant Year Zero ttrpg.
+		<br>Currently only saves to cookies. Not extensively tested.
+		<br><a href="https://diztracshon.github.io/Mutant-Year-Zero-Character-Creator/">MYZ Character Creator</a>
+	</p>
+	<br>
+	
+	<div id="MYZSC"><h3>Skills Cheatsheet</h3></a>
+	<p>
+		A list of the skills, role-specific skills separated.<br>
+		Contains descriptions, separated by headings.<br>
+		<a href="https://diztracshon.github.io/MYZ-Skills-Cheatsheet">MYZ Skills Cheatsheet</a>
+	</p>
+	<br>
+
+	<div id="MYZTC"><h3>Talents Cheatsheet</h3></a>
+	<p>
+		A list of the talents, role-specific talents in separate lists.<br>
+		Contains descriptions.<br>
+		<a href="https://diztracshon.github.io/MYZ-Talents-Cheatsheet">MYZ Talents Cheatsheet</a>
+	</p>
+	<br>
+
+	<div id="MYZMC"><h3>Mutations Cheatsheet</h3></a>
+	<p>
+		A list of the mutations, with descriptions.<br>
+		<a href="https://diztracshon.github.io/MYZ-Mutations-Cheatsheet">MYZ Mutations Cheatsheet</a>
+	</p>
+	
+	<br>
+	<p>Hosted with github pages</p>
+	
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				/* Toggle between adding and removing the "active" class,
+				to highlight the button that controls the panel */
+				this.classList.toggle("active");
+
+				/* Toggle between hiding and showing the active panel */
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			});
+	}
+	</script>
 </body>
 </html>
